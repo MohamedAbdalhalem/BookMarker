@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    <link rel="icon" href="images/ce1d64dacd9661b32e550f3049075289.png">
+    <!-- goolge fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <!-- css style -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="modal" id="rules">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 PT rounded-2 py-4 px-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span>
+            <i class="fa-solid fa-circle text-danger fs-5"></i>
+            <i class="fa-solid fa-circle text-warning fs-5"></i>
+            <i class="fa-solid fa-circle text-success fs-5 "></i>
+          </span>
+          <span role="button" id="close">
+            <i class="fa-solid fa-xmark fs-3"></i>
+          </span>
+        </div>
+        <p class="fs-5 fw-bold">Site Name or Url is not valid, Please follow the rules below :</p>
+        <p><i class="fa-solid fa-circle-arrow-right text-danger"></i> Site name must contain at least 3 characters</p>
+        <p><i class="fa-solid fa-circle-arrow-right text-danger"></i> Site URL must be a valid one</p>
+      </div>
+    </div>
+  </div>
+    <div class="container mt-5">  
+        <h1 class="text-center Pacifico display-5  pb-5"><span class="position-relative" >Bookmarker</span></h1>
+        <h3 class="text-center my-4 Righteous"><i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites <i class="fa-solid fa-bookmark"></i></h3>
+        <form class="pb-4 mt-1 mb-3">
+            <label for="nameinput" class="form-label PT fw-bold"><i class="fa-solid fa-book-bookmark me-2"></i> Site Name</label>
+            <input type="text" class="form-control  PT" id="nameinput" placeholder="Bookmark Name">
+            <div class="alert alert-warning py-0" role="alert">
+              this books  is already exixts
+            </div>
+            <label for="urlinput" class="form-label PT fw-bold mt-4"><i class="fa-solid fa-link me-2"></i> Site URL</label>
+            <input type="text" class="form-control  PT mb-4" id="urlinput" placeholder="Website URL">
+            <button  id="add" class="text-white fw-medium PT py-2 px-5 border-0 rounded-3 mx-auto d-block">Submit</button>
+        </form>
+        <table class="table text-center PT">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+<!-- <tr>
+  <td class="position-relative"><span class="position-absolute top-50 start-50 translate-middle">${i+1}</span></td>
+  <td class="position-relative"><span class="position-absolute top-50 start-50 translate-middle">${books[i].name}</span></td>
+  <td><button type="button" class="btn btn-success"><a class="text-white text-decoration-none" href=""><i class="fa-solid fa-eye"></i> Visit</a></button></td>
+  <td><button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i> Delete</button></td>  
+  </tr> -->
