@@ -7,12 +7,13 @@ var tbody = document.querySelector("tbody");
 var rules = document.querySelector("#rules")
 var close = document.querySelector("#close")
 var alert = document.querySelector(".alert")
-var regexForName = /\w{3,}/;
+var regexForName = /^[A-Za-z]{3,}$/;
 var regexForURl = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/;
 // regex and valid input
 nameInput.addEventListener("keyup", function () {
     if (regexForName.test(nameInput.value) !== true) {
         nameInput.classList.add("is-invalid")
+        nameInput.classList.remove("is-valid")
     } else {
         nameInput.classList.remove("is-invalid")
         nameInput.classList.add("is-valid")
@@ -31,6 +32,7 @@ nameInput.addEventListener("keyup", function () {
 urlInput.addEventListener("keyup", function () {
     if (regexForURl.test(urlInput.value) !== true) {
         urlInput.classList.add("is-invalid")
+        urlInput.classList.remove("is-valid")
     } else {
         urlInput.classList.remove("is-invalid")
         urlInput.classList.add("is-valid")
