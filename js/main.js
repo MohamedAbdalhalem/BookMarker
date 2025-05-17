@@ -18,16 +18,7 @@ nameInput.addEventListener("keyup", function () {
         nameInput.classList.remove("is-invalid")
         nameInput.classList.add("is-valid")
     }
-    for (var i = 0; i < books.length; i++){
-        if (nameInput.value == books[i].name) {
-            alert.style.display ="block"
-            nameInput.classList.add("is-invalid")
-        } else {
-            alert.style.display = "none"
-            nameInput.classList.remove("is-invalid")
-            nameInput.classList.add("is-valid")
-        }
-    }
+    
 })
 urlInput.addEventListener("keyup", function () {
     if (regexForURl.test(urlInput.value) !== true) {
@@ -55,11 +46,34 @@ if (localStorage.getItem("data") != null) {
 }
 // handel button add
 add.addEventListener("click", function () {
-    if ( regexForName.test(nameInput.value) !== true || 
+    // if ( regexForName.test(nameInput.value) !== true ||
+    //     regexForURl.test(urlInput.value) !== true) {
+    //     rules.style.display = "block"
+    // } else {
+    //     var book = {
+    //             name: nameInput.value,
+    //             url : urlInput.value
+    //         }
+    //         books.push(book);
+    //         localStorage.setItem("data",JSON.stringify(books))
+    //         show()
+    //         clearform();
+            
+    // }
+    for (var i = 0; i < books.length; i++){
+        if (nameInput.value == books[i].name) {
+            alert.style.display = "block"
+    
+        } else {
+            alert.style.display = "none"
+        }
+    }
+    if (alert.style.display == "none") {
+        if ( regexForName.test(nameInput.value) !== true ||
         regexForURl.test(urlInput.value) !== true) {
-        rules.style.display="block"
+        rules.style.display = "block"
     } else {
-            var book = {
+        var book = {
                 name: nameInput.value,
                 url : urlInput.value
             }
@@ -67,8 +81,11 @@ add.addEventListener("click", function () {
             localStorage.setItem("data",JSON.stringify(books))
             show()
             clearform();
+            
     }
+    } 
 })
+
 // handele show books
 function show() {
     var str = ""
