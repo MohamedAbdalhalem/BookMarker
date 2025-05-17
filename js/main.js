@@ -7,7 +7,7 @@ var tbody = document.querySelector("tbody");
 var rules = document.querySelector("#rules")
 var close = document.querySelector("#close")
 var alert = document.querySelector(".alert")
-var regexForName = /^[A-Za-z]{3,}$/;
+var regexForName = /^[A-Za-z0-9._-]{3,}$/;
 var regexForURl = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/;
 // regex and valid input
 nameInput.addEventListener("keyup", function () {
